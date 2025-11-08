@@ -11,8 +11,8 @@ export default defineConfig({
   // Development server ayarları
   server: {
     port: 5173, // Frontend 5173 portunda çalışacak (Vite default)
-    open: true, // Tarayıcıyı otomatik aç
     strictPort: false,
+    open: true, // Tarayıcıyı otomatik aç
     cors: true, // CORS'u aktif et - backend ile iletişim için
   },
 
