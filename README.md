@@ -164,15 +164,15 @@ Jaeger: http://localhost:16686
 
 **Cevap:**
 
- **Minimal Bağımlılık** - Sadece Python, Node.js ve Docker
- **3 Komutla Çalışır** - docker-compose + uvicorn + npm run dev
- **Otomatik Setup** - SQLite database otomatik oluşturulur, tablolar migrate edilir
- **Cross-Platform** - Windows, macOS, Linux'ta çalışır
- **.env.example** - Tüm gerekli environment variables örnekli
- **Esnek Port Yönetimi** - Port çakışması durumunda otomatik alternatif port
- **Zero External Services** - Database server, cache server gibi ek kurulum yok
- **Hot Reload** - Backend ve Frontend development sırasında otomatik reload
- **Type Safety** - TypeScript + Python type hints (daha az hata)
+- **Minimal Bağımlılık** - Sadece Python, Node.js ve Docker
+- **3 Komutla Çalışır** - docker-compose + uvicorn + npm run dev
+- **Otomatik Setup** - SQLite database otomatik oluşturulur, tablolar migrate edilir
+- **Cross-Platform** - Windows, macOS, Linux'ta çalışır
+- **.env.example** - Tüm gerekli environment variables örnekli
+- **Esnek Port Yönetimi** - Port çakışması durumunda otomatik alternatif port
+- **Zero External Services** - Database server, cache server gibi ek kurulum yok
+- **Hot Reload** - Backend ve Frontend development sırasında otomatik reload
+- **Type Safety** - TypeScript + Python type hints (daha az hata)
 
 ### 2. User Experience (UX) 
 
@@ -180,14 +180,14 @@ Jaeger: http://localhost:16686
 
 **Cevap:**
 
- **Streaming Responses** - AI cevapları real-time, kelime kelime görünür (ChatGPT benzeri)
- **Loading States** - Her işlemde loading indicator (skeleton, spinner)
- **Error Messages** - Türkçe, anlaşılır, actionable hata mesajları
- **Dark Mode** - Göz dostu tema, otomatik sistem tercihi
- **Markdown Rendering** - Kod blokları syntax highlighting ile
- **Image Upload** - Vision model'ler için resim desteği
- **Message Editing** - Gönderilen mesajları düzenleyip yeniden gönderme
- **Visual Feedback** - Hover effects, transitions, animations
+- **Streaming Responses** - AI cevapları real-time, kelime kelime görünür (ChatGPT benzeri)
+- **Loading States** - Her işlemde loading indicator (skeleton, spinner)
+- **Error Messages** - Türkçe, anlaşılır, actionable hata mesajları
+- **Dark Mode** - Göz dostu tema, otomatik sistem tercihi
+- **Markdown Rendering** - Kod blokları syntax highlighting ile
+- **Image Upload** - Vision model'ler için resim desteği
+- **Message Editing** - Gönderilen mesajları düzenleyip yeniden gönderme
+- **Visual Feedback** - Hover effects, transitions, animations
 
 ### 3. Robustness 
 
@@ -195,15 +195,15 @@ Jaeger: http://localhost:16686
 
 **Cevap:**
 
- **Global Error Handlers** - Backend'de tüm exception'lar yakalanır
- **Error Boundary** - Frontend'de React error boundary
- **Input Validation** - Pydantic ile otomatik data validation
- **API Error Handling** - OpenRouter API hataları user-friendly mesajlara dönüştürülür
- **Type Safety** - Compile-time hata tespiti (TypeScript + Python types)
- **CORS Configuration** - Multi-port support, güvenli cross-origin
- **Database Integrity** - Foreign keys, cascade delete, ACID transactions
- **Network Error Handling** - Timeout, retry logic, connection errors
- **User-Friendly Messages** - Teknik hatalar Türkçe açıklamaya dönüştürülür
+- **Global Error Handlers** - Backend'de tüm exception'lar yakalanır
+- **Error Boundary** - Frontend'de React error boundary
+- **Input Validation** - Pydantic ile otomatik data validation
+- **API Error Handling** - OpenRouter API hataları user-friendly mesajlara dönüştürülür
+- **Type Safety** - Compile-time hata tespiti (TypeScript + Python types)
+- **CORS Configuration** - Multi-port support, güvenli cross-origin
+- **Database Integrity** - Foreign keys, cascade delete, ACID transactions
+- **Network Error Handling** - Timeout, retry logic, connection errors
+- **User-Friendly Messages** - Teknik hatalar Türkçe açıklamaya dönüştürülür
   - Örnek: "503 Service Unavailable" → "AI servisi şu an kullanılamıyor"
 
 ---
@@ -213,10 +213,12 @@ Jaeger: http://localhost:16686
 Temel gereksinimlerin ötesinde:
 
 - **Temporary Mode** - Privacy-first geçici sohbetler (database'e kaydedilmez)
-- **Conversation Search** - Sohbet arama ve filtreleme
+- **Conversation Search** - Sidebar'da real-time arama (başlık ve model adına göre)
+- **Auto-Scroll to Bottom** - Yeni mesajlarda otomatik scroll, smooth animation
 - **Message Editing** - Gönderilen mesajları düzenleyip yeniden gönderme
 - **Model Filtering** - Ücretsiz, vision, fiyat bazlı filtreleme
 - **Multi-Model Support** - Aynı sohbette farklı modeller kullanabilme
+- **Conversation Management** - Başlık düzenleme, silme, kronolojik listeleme
 
 ---
 
@@ -313,12 +315,12 @@ Temel gereksinimlerin ötesinde:
 
 ### Windows, macOS, Linux Desteği
 
- **SQLite Database** - Her platformda aynı şekilde çalışır
- **Docker** - Jaeger container izole, dependency conflict yok
- **Environment Variables** - `.env` her platformda aynı
- **Virtual Environment** - Python dependencies izole
- **Package Managers** - pip + npm standart komutlar
- **Port Flexibility** - CORS multi-port destekliyor
+- **SQLite Database** - Her platformda aynı şekilde çalışır
+- **Docker** - Jaeger container izole, dependency conflict yok
+- **Environment Variables** - `.env` her platformda aynı
+- **Virtual Environment** - Python dependencies izole
+- **Package Managers** - pip + npm standart komutlar
+- **Port Flexibility** - CORS multi-port destekliyor
 
 **Hot Reload:**
 - Backend: Kod değişikliğinde otomatik reload
