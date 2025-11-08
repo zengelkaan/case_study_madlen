@@ -1,0 +1,17 @@
+{
+  // TypeScript yapılandırması - Node.js ortamı için (Vite config dosyası için)
+  // vite.config.ts gibi build tool config'leri için kullanılır
+  
+  "compilerOptions": {
+    // Node.js ortamı için ayarlar
+    "composite": true, // Project references için
+    "skipLibCheck": true, // Hız için .d.ts dosyalarını atla
+    "module": "ESNext", // ES modules
+    "moduleResolution": "bundler", // Bundler çözümleme
+    "allowSyntheticDefaultImports": true // Default import'lara izin ver
+  },
+  
+  // Sadece config dosyalarını dahil et
+  "include": ["vite.config.ts"]
+}
+

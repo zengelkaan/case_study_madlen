@@ -1,0 +1,39 @@
+# Frontend .gitignore
+# Git'in göz ardı edeceği dosya ve klasörler
+
+# Bağımlılıklar
+node_modules/
+
+# Build çıktıları
+dist/
+dist-ssr/
+*.local
+
+# Editor dosyaları
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Log dosyaları
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.swp
+*.swo
+*~
+

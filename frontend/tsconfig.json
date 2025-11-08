@@ -1,0 +1,54 @@
+{
+  // TypeScript yapılandırma dosyası
+  // TypeScript derleyicisinin davranışını kontrol eder
+  
+  "compilerOptions": {
+    // Hedef JavaScript versiyonu - modern tarayıcılar için ES2020
+    "target": "ES2020",
+    
+    // Hangi JavaScript özelliklerinin kullanılacağı
+    "useDefineForClassFields": true,
+    
+    // Modül sistemi - ES modules kullan
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    
+    // Modül çözümleme stratejisi
+    "module": "ESNext",
+    
+    // JSX dönüştürme - React 17+ için otomatik
+    "jsx": "react-jsx",
+    
+    // Modül çözümleme yöntemi - Node.js tarzı
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    
+    // Path mapping - @ ile src klasörüne erişim
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    
+    // Type checking seviyeleri
+    "strict": true, // Tüm katı kontrolleri aktif et
+    "noUnusedLocals": true, // Kullanılmayan değişkenleri uyar
+    "noUnusedParameters": true, // Kullanılmayan parametreleri uyar
+    "noFallthroughCasesInSwitch": true, // Switch case'lerde break kontrolü
+    
+    // Import/Export ayarları
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    
+    // Çıktı ayarları
+    "skipLibCheck": true, // .d.ts dosyalarını atla - hız için
+    "noEmit": true // Vite build yapacağı için TypeScript çıktı üretmesin
+  },
+  
+  // Hangi dosyalar compile edilecek
+  "include": ["src"],
+  
+  // Node modules hariç tut
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+

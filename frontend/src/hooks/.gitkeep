@@ -1,0 +1,3 @@
+# hooks/ klasörü
+# Custom React hook'ları burada oluşturulacak
+# Örnek: useChat.ts, useConversations.ts, useModels.ts
