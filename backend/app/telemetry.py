@@ -40,9 +40,9 @@ def setup_telemetry():
     tracer_provider = TracerProvider(resource=resource)
     
     # 3. OTLP Exporter oluştur - Jaeger'a span gönderme (gRPC)
-    # gRPC için endpoint: "localhost:4317" ve insecure=True (lokalde TLS yok)
+    # gRPC için endpoint: config'den oku ve insecure=True (lokalde TLS yok)
     otlp_exporter = OTLPSpanExporter(
-        endpoint="localhost:4317",
+        endpoint=settings.OTEL_EXPORTER_OTLP_ENDPOINT,
         insecure=True,
         timeout=10,
     )

@@ -33,8 +33,8 @@ Modern, yerel olarak çalışan web tabanlı AI sohbet uygulaması. OpenRouter A
 - **Yönetim** - Conversation silme, düzenleme
 
 ### OpenTelemetry Entegrasyonu
-- **Backend Tracing** - FastAPI + HTTPX instrumentation
-- **Frontend Tracing** - Fetch API instrumentation
+- **Backend Tracing** - FastAPI + HTTPX instrumentation (gRPC port 4317)
+- **Frontend Tracing** - Fetch API instrumentation (HTTP port 4318)
 - **Jaeger UI** - Docker ile yerel Jaeger backend
 - **Kritik İşlemler Trace Ediliyor:**
   - API çağrıları (HTTP request/response)

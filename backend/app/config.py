@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     # OpenTelemetry Configuration - Observability ayarları
     OTEL_SERVICE_NAME: str = Field(default="madlen-chat-backend")  # Servis adı - Jaeger'da görünecek
     OTEL_TRACES_EXPORTER: str = Field(default="otlp")  # Trace export formatı
-    OTEL_EXPORTER_OTLP_ENDPOINT: str = Field(default="http://localhost:4318/v1/traces")  # Jaeger collector endpoint (HTTP)
-    OTEL_EXPORTER_OTLP_PROTOCOL: str = Field(default="http/protobuf")  # OTLP protokol tipi
+    OTEL_EXPORTER_OTLP_ENDPOINT: str = Field(default="localhost:4317")  # Jaeger collector endpoint (gRPC)
+    OTEL_EXPORTER_OTLP_PROTOCOL: str = Field(default="grpc")  # OTLP protokol tipi
     OTEL_METRICS_EXPORTER: str = Field(default="none")  # Metrics şimdilik kapalı
     OTEL_LOGS_EXPORTER: str = Field(default="none")  # Logs şimdilik kapalı
     OTEL_RESOURCE_ATTRIBUTES: str = Field(default="service.version=1.0.0,deployment.environment=dev")  # Servis metadata
