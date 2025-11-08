@@ -81,36 +81,45 @@ export function ModelSelector({
       result.sort((a, b) => a.name.localeCompare(b.name))
     } else if (filters.sortBy === 'price-asc') {
       result.sort((a, b) => {
+        // Free modeller en üstte, dinamik fiyat (-1) en altta
         const priceA = a.is_free ? 0 : (a.pricing?.average ?? Infinity)
         const priceB = b.is_free ? 0 : (b.pricing?.average ?? Infinity)
-        return priceA - priceB
+        // Negatif değerleri (dinamik fiyat) en sona at
+        const finalA = priceA < 0 ? Infinity : priceA
+        const finalB = priceB < 0 ? Infinity : priceB
+        return finalA - finalB
       })
     } else if (filters.sortBy === 'price-desc') {
       result.sort((a, b) => {
+        // Free modeller en altta, dinamik fiyat (-1) ortada
         const priceA = a.is_free ? 0 : (a.pricing?.average ?? 0)
         const priceB = b.is_free ? 0 : (b.pricing?.average ?? 0)
-        return priceB - priceA
+        // Negatif değerleri (dinamik fiyat) ortaya koy
+        const finalA = priceA < 0 ? 0 : priceA
+        const finalB = priceB < 0 ? 0 : priceB
+        return finalB - finalA
       })
     }
     
     return result
   }, [models, filters])
   
-  // Fiyat formatla - 1K token bazında (en okunabilir)
+  // Fiyat formatla - Cent cinsinden, 1M token bazında, 5 decimal
   const formatPrice = (model: Model): string => {
     if (model.is_free) return ''
     if (!model.pricing?.average) return ''
-    // 1M token fiyatını 1K'ya çevir (1000'e böl)
-    const priceFor1K = (model.pricing.average / 1000)
-    // Cent cinsinden göster (daha okunabilir)
-    const cents = priceFor1K * 100
-    if (cents < 0.01) {
-      return `<0.01¢/1K`
+    
+    const priceFor1M = model.pricing.average // $/1M token (backend'den geldiği gibi)
+    
+    // -1.0 özel değer kontrolü (dinamik fiyatlandırma, örn: Auto Router)
+    if (priceFor1M < 0) {
+      return 'Auto'
     }
-    if (cents < 1) {
-      return `${cents.toFixed(2)}¢/1K`
-    }
-    return `${cents.toFixed(1)}¢/1K`
+    
+    const centsFor1M = priceFor1M * 100 // $ → ¢ (100 ile çarp)
+    
+    // 5 decimal precision ile göster
+    return `${centsFor1M.toFixed(5)}¢/1M`
   }
   
   // Model seç handler
@@ -150,7 +159,7 @@ export function ModelSelector({
                       Free
                     </span>
                   ) : (
-                    <span className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full font-medium">
+                    <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full font-medium">
                       {formatPrice(selectedModelData)}
                     </span>
                   )}
@@ -286,7 +295,7 @@ export function ModelSelector({
                           Free
                         </span>
                       ) : (
-                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 
+                        <span className="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 
                                        rounded-md text-xs font-medium">
                           {formatPrice(model)}
                         </span>
