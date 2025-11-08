@@ -114,8 +114,12 @@ cp .env.example .env
 ```bash
 cd ../frontend
 
+# Environment variables ayarla
+cp .env.example .env
+
 # Bağımlılıkları yükle
 npm install
+```
 
 ### 4. Jaeger Başlatma (Telemetry)
 
