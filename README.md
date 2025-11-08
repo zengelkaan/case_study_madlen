@@ -216,6 +216,7 @@ Temel gereksinimlerin ötesinde:
 - **Conversation Search** - Sidebar'da real-time arama (başlık ve model adına göre)
 - **Auto-Scroll to Bottom** - Yeni mesajlarda otomatik scroll, smooth animation
 - **Message Editing** - Gönderilen mesajları düzenleyip yeniden gönderme
+- **Image Upload** - Vision destekli modellerde resim yükleme ve AI'a soru sorma
 - **Model Filtering** - Ücretsiz, vision, fiyat bazlı filtreleme
 - **Multi-Model Support** - Aynı sohbette farklı modeller kullanabilme
 - **Conversation Management** - Başlık düzenleme, silme, kronolojik listeleme
