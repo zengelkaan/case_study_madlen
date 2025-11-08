@@ -124,6 +124,8 @@ cd ..
 docker-compose up -d
 ```
 
+**Not:** Container isim çakışması hatası alırsanız: `docker stop madlen-jaeger && docker rm madlen-jaeger` komutuyla eski container'ı temizleyin.
+
 ---
 
 ## Uygulamayı Çalıştırma
@@ -153,21 +155,6 @@ Frontend: http://localhost:5173
 Jaeger: http://localhost:16686
 
 **Not:** Port 5173 meşgulse Vite otomatik olarak alternatif port seçer (5174, 5175...). CORS ayarları tüm portları destekler.
-
-### Troubleshooting
-
-**Docker container isim çakışması:**
-
-Eğer `docker-compose up -d` komutu şu hatayı veriyorsa:
-```
-Error: The container name "/madlen-jaeger" is already in use
-```
-
-Eski container'ı temizleyin:
-```bash
-docker stop madlen-jaeger && docker rm madlen-jaeger
-docker-compose up -d
-```
 
 ---
 
